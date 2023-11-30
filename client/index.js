@@ -37,7 +37,7 @@ const saveGuestData = async (event) => {
       body: JSON.stringify(guestData),
     });
     if (res.status === 200) {
-      console.log("saved data");
+      console.log(guestData);
     } else {
       errorEl.display = "block";
       errorEl.textContent = `HTTP error: status ${res.status}`;

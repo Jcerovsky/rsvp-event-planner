@@ -34,7 +34,7 @@ if ($method eq "POST") {
     my $data = decode_json($query->param("POSTDATA"));
     my $first_name = $data->{'first_name'} ;
     my $last_name = $data->{'last_name'} ;
-    my $attending = $data->{'attending'} eq '1'? 1: 0 ;
+    my $attending = $data->{'attending'} eq 'TRUE'? 1: 0 ;
     my $number_of_attendees = $data->{'number_of_attendees'} ;
     my $dietary_requirements = $data->{'dietary_requirements'} ;
     my $special_requests = $data->{'special_requests'};
