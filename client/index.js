@@ -8,7 +8,8 @@ const fetchGuests = async () => {
   console.log(data);
 };
 
-const saveGuestData = async () => {
+const saveGuestData = async (event) => {
+  event.preventDefault();
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const attending = document.getElementById("attending").value;
