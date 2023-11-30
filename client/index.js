@@ -1,4 +1,5 @@
-const rootDivEl = document.getElementById("root");
+const rootEl = document.getElementById("root");
+const errorEl = document.querySelector(".errorDiv");
 const attendingEl = document.getElementById("attending");
 
 const fetchGuests = async () => {
@@ -6,12 +7,49 @@ const fetchGuests = async () => {
   const data = await response.json();
   console.log(data);
 };
-console.log("fired");
+
+const saveGuestData = async () => {
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const attending = document.getElementById("attending").value;
+  const numberOfAttendees = document.getElementById("numberOfAttendees").value;
+  const dietaryRequirements = document.getElementById(
+    "dietaryRequirements",
+  ).value;
+  const specialRequests = document.getElementById("specialRequests").value;
+
+  const guestData = {
+    first_name: firstName,
+    last_name: lastName,
+    attending: attending,
+    number_of_attendees: numberOfAttendees,
+    dietary_requirements: dietaryRequirements,
+    special_requests: specialRequests,
+  };
+
+  try {
+    const res = await fetch("http://localhost/cgi-bin/index.pl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(guestData),
+    });
+    if (res.status === 200) {
+      console.log("saved data");
+    } else {
+      errorEl.textContent = `HTTP error: status ${res.status}`;
+    }
+  } catch (err) {
+    errorEl.textContent = `Could not save data: ${err}`;
+  }
+};
 
 const handleChangeAttending = () => {
-  console.log("fired");
   if (attendingEl.value === "1") {
     document.querySelector(".guest-attending").style.display = "flex";
+  } else {
+    document.querySelector(".guest-attending").style.display = "none";
   }
 };
 
