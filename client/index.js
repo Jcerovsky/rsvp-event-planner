@@ -6,6 +6,7 @@ const fetchGuests = async () => {
   const data = await response.json();
   console.log(data);
 };
+console.log("fired");
 
 const handleChangeAttending = () => {
   console.log("fired");
