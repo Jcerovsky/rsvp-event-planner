@@ -8,24 +8,19 @@
   </head>
   <body>
     <h1>Event RSVP Form</h1>
-    <form>
+    <form class="container">
       <label for="firstName">First Name:</label>
-      <input
-        type="text"
-        id="firstName"
-        name="first_name"
-        required
-      /><br /><br />
+      <input type="text" id="firstName" name="first_name" required />
 
       <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="last_name" required /><br /><br />
+      <input type="text" id="lastName" name="last_name" required />
 
       <label for="attending">Will you be attending?</label>
       <select id="attending" name="attending" required>
         <option value="">--Please choose an option--</option>
         <option value="1">Yes</option>
-        <option value="0">No</option></select
-      ><br /><br />
+        <option value="0">No</option>
+      </select>
 
       <label for="numberOfAttendees"
         >Number of Attendees (including yourself):</label
@@ -37,14 +32,10 @@
         min="1"
         max="10"
         required
-      /><br /><br />
+      />
 
       <label for="dietaryRequirements">Dietary Requirements:</label>
-      <input
-        type="text"
-        id="dietaryRequirements"
-        name="dietary_requirements"
-      /><br /><br />
+      <input type="text" id="dietaryRequirements" name="dietary_requirements" />
 
       <label for="specialRequests">Special Requests:</label>
       <textarea
@@ -52,12 +43,7 @@
         name="special_requests"
         rows="4"
         cols="50"
-      ></textarea
-      ><br /><br />
-
-      <label for="rsvpDate">RSVP Date:</label>
-      <input type="date" id="rsvpDate" name="rsvp_date" required /><br /><br />
-
+      ></textarea>
       <input type="submit" value="Submit RSVP" />
     </form>
   </body>
