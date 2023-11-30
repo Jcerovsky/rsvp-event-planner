@@ -30,3 +30,14 @@ if ($method eq 'GET') {
     print encode_json(\@guests)
 };
 
+if ($method eq "POST") {
+    my $data = decode_json($query->param("POSTDATA"));
+    my $first_name = $data->{'first_name'} ;
+    my $last_name = $data->{'last_name'} ;
+    my $attending = $data->{'attending'} ;
+    my $number_of_attendees = $data->{'number_of_attendees'} ;
+    my $dietary_requirements = $data->{'dietary_requirements'} ;
+    my $special_requests = $data->{'special_requests'};
+    my $sth = $database_handle->prepare("INSERT INTO rsvp_guests (first_name=?, )")
+}
+

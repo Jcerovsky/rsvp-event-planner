@@ -171,6 +171,7 @@ input[type="submit"]:hover {
 }
 
 .errorDiv {
+  display: none;
   background-color: #ff091f;
   color: #ffffff;
   font-weight: bold;

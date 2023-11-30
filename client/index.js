@@ -38,9 +38,11 @@ const saveGuestData = async () => {
     if (res.status === 200) {
       console.log("saved data");
     } else {
+      errorEl.display = "block";
       errorEl.textContent = `HTTP error: status ${res.status}`;
     }
   } catch (err) {
+    errorEl.display = "block";
     errorEl.textContent = `Could not save data: ${err}`;
   }
 };
