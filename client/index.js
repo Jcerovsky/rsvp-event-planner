@@ -58,3 +58,5 @@ const handleChangeAttending = () => {
 if (attendingEl) {
   attendingEl.addEventListener("change", handleChangeAttending);
 }
+
+document.querySelector(".submit-btn").addEventListener("click", saveGuestData);
