@@ -8,6 +8,9 @@ use CGI;
 
 my $query = CGI->new();
 my $method = $query->request_method();
+
+print $query->header('application/json');
+
 my $data_source_name = "DBI:MariaDB:database=event_planner;host=localhost";
 my $database_handle;
 eval {
@@ -20,10 +23,10 @@ if ($@) {
 if ($method eq 'GET') {
    my $sth = $database_handle->prepare("SELECT * FROM rsvp_guests");
     $sth->execute();
-    my @employees;
+    my @guests;
     while (my $row = $sth->fetchrow_hashref()) {
-        push(@employees, $row)
+        push(@guests, $row)
     };
-    print encode_json(@employees)
-}
+    print encode_json(@guests)
+};
 
