@@ -21,29 +21,34 @@
         <option value="1">Yes</option>
         <option value="0">No</option>
       </select>
-      <div></div>
-      <label for="numberOfAttendees"
-        >Number of Attendees (including yourself):</label
-      >
-      <input
-        type="number"
-        id="numberOfAttendees"
-        name="number_of_attendees"
-        min="1"
-        max="10"
-        required
-      />
+      <div class="guest-attending">
+        <label for="numberOfAttendees"
+          >Number of Attendees (including yourself):</label
+        >
+        <input
+          type="number"
+          id="numberOfAttendees"
+          name="number_of_attendees"
+          min="1"
+          max="2"
+          required
+        />
 
-      <label for="dietaryRequirements">Dietary Requirements:</label>
-      <input type="text" id="dietaryRequirements" name="dietary_requirements" />
+        <label for="dietaryRequirements">Dietary Requirements:</label>
+        <input
+          type="text"
+          id="dietaryRequirements"
+          name="dietary_requirements"
+        />
 
-      <label for="specialRequests">Special Requests:</label>
-      <textarea
-        id="specialRequests"
-        name="special_requests"
-        rows="4"
-        cols="50"
-      ></textarea>
+        <label for="specialRequests">Special Requests:</label>
+        <textarea
+          id="specialRequests"
+          name="special_requests"
+          rows="4"
+          cols="50"
+        ></textarea>
+      </div>
 
       <input type="submit" value="Submit RSVP" />
     </form>

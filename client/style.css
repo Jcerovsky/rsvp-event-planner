@@ -35,6 +35,11 @@ label {
   font-weight: bold;
 }
 
+.guest-attending {
+  display: flex;
+  flex-direction: column;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="date"],
