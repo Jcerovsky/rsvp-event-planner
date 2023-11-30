@@ -8,8 +8,8 @@ const fetchGuests = async () => {
   console.log(data);
 };
 
-const saveGuestData = async (event) => {
-  event.preventDefault();
+const saveGuestData = async (e) => {
+  e.preventDefault();
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const attending = document.getElementById("attending").value;
@@ -49,7 +49,7 @@ const saveGuestData = async (event) => {
 };
 
 const handleChangeAttending = () => {
-  if (attendingEl.value === "1") {
+  if (attendingEl.value === "TRUE") {
     document.querySelector(".guest-attending").style.display = "flex";
   } else {
     document.querySelector(".guest-attending").style.display = "none";
@@ -59,5 +59,3 @@ const handleChangeAttending = () => {
 if (attendingEl) {
   attendingEl.addEventListener("change", handleChangeAttending);
 }
-
-document.querySelector(".submit-btn").addEventListener("click", saveGuestData);
