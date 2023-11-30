@@ -8,9 +8,12 @@ const fetchGuests = async () => {
 };
 
 const handleChangeAttending = () => {
-  if (attendingEl.value === "Yes") {
-    document;
+  console.log("fired");
+  if (attendingEl.value === "1") {
+    document.querySelector(".guest-attending").style.display = "flex";
   }
 };
 
-document.addEventListener("change");
+if (attendingEl) {
+  attendingEl.addEventListener("change", handleChangeAttending);
+}
