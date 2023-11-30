@@ -27,6 +27,6 @@ if ($method eq 'GET') {
     while (my $row = $sth->fetchrow_hashref()) {
         push(@guests, $row)
     };
-    print encode_json(@guests)
+    print encode_json(\@guests)
 };
 
